@@ -36,41 +36,40 @@ Body {
   transform:scale(1.08);
 }
 #main-product {
-  background:rgb(20,20,20);
-  width:400px;
-  height:380px;
+  background:rgb(15,15,15);
+  width:410px;
+  height:390px;
   border-radius:20px;
+  margin:40px 10px;
   display:inline-block;
-  margin:20px 20px;
   transition:0.3s;
 }
 #main-product:hover {
-  transform:scale(1.05);
-}
-#center_container {
-  justify-content:center;
-  margin:160px auto;
+  transform:scale(1.03);
 }
 #product-profile {
-  width:340px;
+  width:360px;
   height:200px;
   border-radius:20px;
+}
+#procut-name {
+  font-family:Aviny;
+  font-size:50px;
+  color:white;
+  text-align:center;
+  padding-top:10px;
 }
 #procut-description {
   font-family:Aviny;
   font-size:20px;
   color:white;
-  margin-top:10px;
-  width:340px;
+  width:370px;
   text-align:center;
-  height:60px;
+  padding-top:5px;
 }
-#procut-name {
-  font-family:Aviny;
-  font-size:46px;
-  color:white;
-  margin-top:10px;
-  text-align:center;
+#center_container {
+  justify-content:center;
+  margin:50px auto;
 }
 #center-toolbar {
   justify-content:center;

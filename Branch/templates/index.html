@@ -14,35 +14,37 @@
     <body>
 
       <div data-aos="fade-down" id="center-toolbar">
-        <div id="logo-bar">
-          <img title="Webshop" id="shopping-bag" src="{% static 'img/webshop.png' %}">
-        </div>
         <a href="/"><div style="width:60px; height:57px;" id="toolbar">
           <img title="Home" id="home-reload" src="{% static 'img/home.png' %}">
         </div></a>
+        <div id="logo-bar">
+          <img title="Sell" id="shopping-bag" src="{% static 'img/webshop.png' %}">
+        </div>
         <div style="width:60px; height:57px;" id="toolbar">
           <img title="Category" id="category" src="{% static 'img/category.png' %}">
         </div>
+
+        <input type="text" placeholder="Search" id="search-bar">
+        <div id="location-text">Iran</div>
+
         <div onclick="load_search()" style="width:60px; height:57px;" id="toolbar">
           <img title="Search" id="search" src="{% static 'img/search.png' %}">
         </div>
-        <input type="text" placeholder="Search" id="search-bar">
         <div onclick="load_location()" style="width:60px; height:57px;" id="toolbar">
           <img title="Location" id="location" src="{% static 'img/location.png' %}">
         </div>
-        <div id="location-text">Iran</div>
         <div id="profile-bar">
-          <img title="Shopping Cart" id="shopping-bag" src="{% static 'img/bag.png' %}">
+          <img title="Cart" id="shopping-bag" src="{% static 'img/bag.png' %}">
         </div>
       </div>
 
       <center>
       <div data-aos="fade-down" id="center_container">
-        {% for Product in Products %}
+        {% for Category in Categories %}
           <div id="main-product">
-            <p id="procut-name">{{Product.product}}</p>
-            <img id="product-profile" src="{{Product.profile.url}}">
-            <p id="procut-description">{{Product.description}}</p>
+            <p id="procut-name">{{Category.name}}</p>
+            <img id="product-profile" src="{{Category.image.url}}">
+            <p id="procut-description">{{Category.description}}</p>
           </div>
         {% endfor %}
       </div>

@@ -7,7 +7,7 @@ function load_search(){
     document.getElementById("location-text").style.fontSize = "0px"
     document.getElementById("location-text").style.marginLeft = "0px"
 
-    document.getElementById("search-bar").style.width = "120px"
+    document.getElementById("search-bar").style.width = "240px"
     document.getElementById("search-bar").style.height = "60px"
     document.getElementById("search-bar").style.paddingLeft = "30px"
     document.getElementById("search-bar").style.paddingRight = "30px"
@@ -16,7 +16,7 @@ function load_search(){
   }
   else {
     if (document.getElementById("search-bar").style.width == "0px"){
-      document.getElementById("search-bar").style.width = "120px"
+      document.getElementById("search-bar").style.width = "240px"
       document.getElementById("search-bar").style.height = "60px"
       document.getElementById("search-bar").style.paddingLeft = "30px"
       document.getElementById("search-bar").style.paddingRight = "30px"
@@ -42,7 +42,7 @@ function load_location(){
     document.getElementById("search-bar").style.fontSize = "0px"
     document.getElementById("search-bar").style.marginLeft = "0px"
 
-    document.getElementById("location-text").style.width = "120px"
+    document.getElementById("location-text").style.width = "240px"
     document.getElementById("location-text").style.height = "56px"
     document.getElementById("location-text").style.paddingLeft = "30px"
     document.getElementById("location-text").style.paddingRight = "30px"
@@ -51,7 +51,7 @@ function load_location(){
   }
   else {
     if (document.getElementById("location-text").style.width == "0px"){
-      document.getElementById("location-text").style.width = "120px"
+      document.getElementById("location-text").style.width = "240px"
       document.getElementById("location-text").style.height = "56px"
       document.getElementById("location-text").style.paddingLeft = "30px"
       document.getElementById("location-text").style.paddingRight = "30px"

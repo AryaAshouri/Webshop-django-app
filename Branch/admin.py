@@ -1,10 +1,9 @@
 from django.contrib import admin
 from .models import *
 
-class ProductAdmin(admin.ModelAdmin):
-	list_display = ("product", "price", "publish", "status")
+class CategorieAdmin(admin.ModelAdmin):
+	list_display = ("name", "publish", "status")
 	list_filter = ("publish", "status")
-	search_fields = ("product", "category")
-	prepopulated_fields = {"slug" : ("product",)}
+	search_fields = ("name",)
 	ordering = ("publish", "status")
-admin.site.register(Product, ProductAdmin)
+admin.site.register(Categorie, CategorieAdmin)
