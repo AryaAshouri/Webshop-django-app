@@ -82,7 +82,7 @@ Body {
   width:60px;
   height:60px;
   border-radius:10px;
-  margin:0px 450px;
+  margin:0px 10px;
   transition:0.3s;
 }
 #profile-bar:hover {
@@ -111,7 +111,7 @@ Body {
   width:60px;
   height:60px;
   border-radius:10px;
-  margin:0px 450px;
+  margin:0px 0px;
   transition:0.3s;
 }
 #logo-bar:hover {
@@ -158,11 +158,9 @@ Body {
   text-align:center;
   transition:0.2s;
 }
+#location-text:hover {
+    transform:scale(1.03);
+}
 @media only screen and (max-width: 1200px) {
-  #logo-bar {
-    margin:0px 10px;
-  }
-  #profile-bar {
-    margin:0px 10px;
-  }
+
 }
