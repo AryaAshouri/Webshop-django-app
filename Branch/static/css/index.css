@@ -37,10 +37,10 @@ Body {
 }
 #main-product {
   background:rgb(15,15,15);
-  width:410px;
-  height:390px;
-  border-radius:20px;
-  margin:40px 10px;
+  width:280px;
+  height:420px;
+  border-radius:15px;
+  margin:40px 25px;
   display:inline-block;
   transition:0.3s;
 }
@@ -48,24 +48,27 @@ Body {
   transform:scale(1.03);
 }
 #product-profile {
-  width:360px;
-  height:200px;
+  width:140px;
+  height:140px;
   border-radius:20px;
+  margin:40px auto;
+  justify-content:center;
+  display:flex;
 }
 #procut-name {
   font-family:Aviny;
-  font-size:50px;
+  font-size:44px;
   color:white;
   text-align:center;
-  padding-top:10px;
+  margin-top:-30px;
 }
 #procut-description {
   font-family:Aviny;
   font-size:20px;
   color:white;
-  width:370px;
+  width:240px;
+  margin:0px auto;
   text-align:center;
-  padding-top:5px;
 }
 #center_container {
   justify-content:center;

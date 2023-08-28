@@ -24,8 +24,8 @@
           <img title="Category" id="category" src="{% static 'img/category.png' %}">
         </div>
 
-        <input title="Search" type="text" placeholder="Search" id="search-bar">
-        <div title="Location" id="location-text">Iran</div>
+        <input title="Search" type="text" placeholder="جست و جو" id="search-bar">
+        <div title="Location" id="location-text">ایران</div>
 
         <div onclick="load_search()" style="width:60px; height:57px;" id="toolbar">
           <img title="Search" id="search" src="{% static 'img/search.png' %}">
@@ -38,17 +38,15 @@
         </div>
       </div>
 
-      <center>
       <div data-aos="fade-down" id="center_container">
         {% for Category in Categories %}
           <div id="main-product">
-            <p id="procut-name">{{Category.name}}</p>
             <img id="product-profile" src="{{Category.image.url}}">
+            <p id="procut-name">{{Category.name}}</p>
             <p id="procut-description">{{Category.description}}</p>
           </div>
         {% endfor %}
       </div>
-      </center>
     </body>
     <script src="{% static 'js/index.js' %}">AOS.init();</script>
 </html>
