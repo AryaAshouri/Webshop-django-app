@@ -8,7 +8,7 @@
         <link rel="icon" href="{% static 'img/Sicon.png' %}">
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <title>
-            Home
+            Webshop
         </title>
     </head>
     <body>
@@ -24,8 +24,8 @@
           <img title="Category" id="category" src="{% static 'img/category.png' %}">
         </div>
 
-        <input type="text" placeholder="Search" id="search-bar">
-        <div id="location-text">Iran</div>
+        <input title="Search" type="text" placeholder="Search" id="search-bar">
+        <div title="Location" id="location-text">Iran</div>
 
         <div onclick="load_search()" style="width:60px; height:57px;" id="toolbar">
           <img title="Search" id="search" src="{% static 'img/search.png' %}">
@@ -50,5 +50,5 @@
       </div>
       </center>
     </body>
-    <script src="{% static 'js/index.js' %}"></script>
+    <script src="{% static 'js/index.js' %}">AOS.init();</script>
 </html>
