@@ -17,9 +17,9 @@
         <a href="/"><div style="width:60px; height:57px;" id="toolbar">
           <img title="Home" id="home-reload" src="{% static 'img/home.png' %}">
         </div></a>
-        <div id="logo-bar">
+        <a href="/product"><div id="logo-bar">
           <img title="Sell" id="shopping-bag" src="{% static 'img/webshop.png' %}">
-        </div>
+        </div></a>
         <div style="width:60px; height:57px;" id="toolbar">
           <img title="Category" id="category" src="{% static 'img/category.png' %}">
         </div>
@@ -38,7 +38,7 @@
         </div>
       </div>
 
-      <div data-aos="fade-down" id="center_container">
+      <div data-aos="fade-down" data-aos-duration="750" id="center_container">
         {% for Category in Categories %}
           <div id="main-product">
             <img id="product-profile" src="{{Category.image.url}}">

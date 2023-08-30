@@ -10,3 +10,9 @@ app_name = "Branch"
 def home(request):
 	context = {"Categories" : Categorie.objects.filter(status = "p").order_by("-publish")}
 	return render(request, "index.html", context)
+
+def category(request):
+	return render(request, "category.html")
+
+def product(request):
+	return render(request, "product.html")
