@@ -15,4 +15,9 @@ def category(request):
 	return render(request, "category.html")
 
 def product(request):
-	return render(request, "product.html")
+	name = request.POST.get("product")
+	price = request.POST.get("price")
+	category = request.POST.get("category")
+	Product.objects.create(name=name, price=price, category=category, status="p")
+	context = {}
+	return render(request, "product.html", context=context)

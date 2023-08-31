@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/product.css' %}">
+    <link rel="icon" href="{% static 'img/Sicon.png' %}">
+    <script src="{% static 'js/index.js' %}"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <title>
+      Product
+    </title>
+  </head>
+  <body>
+    <form method="POST">
+        {% csrf_token %}
+        <input name="product" id="product" type="text" placeholder="Product">
+        <input name="price" id="price" type="text" placeholder="Price">
+        <input name="category" id="category" type="text" placeholder="Category">
+        <input type="submit" value="Purchase">
+    </form>
+  </body>
+</html>

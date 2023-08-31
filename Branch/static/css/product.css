@@ -1,0 +1,21 @@
+* {
+    padding:0px;
+    margin:0px;
+}
+*:focus {
+  outline:none;
+}
+a {
+  text-decoration:none;
+  color:white;
+}
+Body {
+    background-color:black;
+}
+::-webkit-scrollbar {
+  width:0px;
+}
+::-webkit-scrollbar-track {
+  border-radius:15px;
+  background-color:none;
+}
