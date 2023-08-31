@@ -13,12 +13,14 @@
     </title>
   </head>
   <body>
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        <input name="product" id="product" type="text" placeholder="Product">
-        <input name="price" id="price" type="text" placeholder="Price">
-        <input name="category" id="category" type="text" placeholder="Category">
-        <input type="submit" value="Purchase">
+        {{ form.as_p }}
+        <input autocomplete="off" name="product" id="product" type="text" placeholder="Product">
+        <input autocomplete="off" name="price" id="price" type="text" placeholder="Price">
+        <input autocomplete="off" name="category" id="category" type="text" placeholder="Category">
+        <input name="image" id="image" type="file">
+        <input type="submit" value="Purchase" id="submit">
     </form>
   </body>
 </html>

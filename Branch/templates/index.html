@@ -46,6 +46,14 @@
             <p id="procut-description">{{Category.description}}</p>
           </div>
         {% endfor %}
+
+        {% for Product in Products %}
+          <div id="main-product">
+            <img id="product-profile" src="{{Product.image.url}}">
+            <p id="procut-name">{{Product.name}}</p>
+            <p id="procut-description">{{Product.description}}</p>
+          </div>
+        {% endfor %}
       </div>
     </body>
     <script src="{% static 'js/index.js' %}">AOS.init();</script>
