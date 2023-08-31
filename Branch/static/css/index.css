@@ -20,7 +20,7 @@ Body {
   background-color:none;
 }
 #toolbar {
-  background-color:rgb(20,20,20);
+  background-color:rgb(48, 185, 219);
   width:120px;
   height:55px;
   border-radius:10px;
@@ -36,7 +36,7 @@ Body {
   transform:scale(1.08);
 }
 #main-product {
-  background:rgb(15,15,15);
+  background:rgb(48, 185, 219);
   width:280px;
   height:420px;
   border-radius:15px;
@@ -80,7 +80,7 @@ Body {
   display:flex;
 }
 #profile-bar {
-  background-color:rgb(20,20,20);
+  background-color:rgb(48, 185, 219);
   width:60px;
   height:60px;
   border-radius:10px;
@@ -91,7 +91,7 @@ Body {
   transform:scale(1.08);
 }
 #search-bar {
-  background-color:rgb(20,20,20);
+  background-color:rgb(48, 185, 219);
   width:800px;
   height:60px;
   border-radius:10px;
@@ -110,7 +110,7 @@ Body {
   transform:scale(1.0081);
 }
 #logo-bar {
-  background-color:rgb(20,20,20);
+  background-color:rgb(48, 185, 219);
   width:60px;
   height:60px;
   border-radius:10px;
@@ -147,7 +147,7 @@ Body {
   margin:3px 5px;
 }
 #location-text {
-  background-color:rgb(20,20,20);
+  background-color:rgb(48, 185, 219);
   width:0px;
   height:0px;
   border-radius:10px;

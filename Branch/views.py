@@ -22,6 +22,10 @@ def product(request):
 		price = request.POST.get("price")
 		category = request.POST.get("category")
 		image = request.FILES.get("image")
-		Product.objects.create(name=name, price=price, category=category, image=image, status="p")
+		if (name != "" and price != "" and category != "" and image != ""):
+			Product.objects.create(name=name, price=price, category=category, image=image, status="p")
+			return HttpResponseRedirect("/")
+		else:
+			return HttpResponseRedirect("/")
 
 	return render(request, "product.html")

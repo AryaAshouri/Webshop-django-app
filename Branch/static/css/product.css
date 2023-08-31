@@ -20,8 +20,8 @@ Body {
   background-color:none;
 }
 #product {
-  background:rgb(20,20,20);
-  width:300px;
+  background:rgb(48, 185, 219);
+  width:500px;
   height:60px;
   border-radius:10px;
   text-align:center;
@@ -33,8 +33,8 @@ Body {
   margin:120px auto;
 }
 #price {
-  background:rgb(20,20,20);
-  width:300px;
+  background:rgb(48, 185, 219);
+  width:500px;
   height:60px;
   border-radius:10px;
   text-align:center;
@@ -46,8 +46,8 @@ Body {
   margin:-100px auto;
 }
 #category {
-  background:rgb(20,20,20);
-  width:300px;
+  background:rgb(48, 185, 219);
+  width:500px;
   height:60px;
   border-radius:10px;
   text-align:center;
@@ -59,13 +59,24 @@ Body {
   margin:120px auto;
 }
 #image {
-  margin:-100px auto;
-  display:flex;
+  font-family:calibri;
+  width:0px;
+  height:40px;
   justify-content:center;
+  display:flex;
+  margin:-100px auto;
+  padding-top:20px;
+  color:white;
+  border:none;
+  border-radius:10px;
+  text-align: center;
+  background-color:rgb(48, 185, 219);
+  cursor: pointer;
+  padding-left:500px;
 }
 #submit {
-  background:rgb(20,20,20);
-  width:300px;
+  background:rgb(48, 185, 219);
+  width:500px;
   height:60px;
   border-radius:10px;
   text-align:center;
