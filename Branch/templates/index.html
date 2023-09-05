@@ -4,9 +4,9 @@
     <head>
         <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <link rel="stylesheet" href="{% static 'css/index.css' %}">
         <link rel="icon" href="{% static 'img/webshop.png' %}">
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <title>
             Webshop
         </title>
@@ -27,20 +27,59 @@
         </div></a>
 
         <input type="text" placeholder="جست و جو" id="search-bar">
+        <div id="location-bar">ایران</div>
 
-        <a href="/"><div id="toolbar">
-          <img title="Search" class="icon" src="{% static 'img/search.png' %}">
-        </div></a>
+        <div onclick="load_search()" id="toolbar">
+          <img title="Search" class="icon" onclick="load_search()" src="{% static 'img/search.png' %}">
+        </div>
 
-        <a href="/"><div id="toolbar">
-          <img title="Location" class="icon" src="{% static 'img/location.png' %}">
-        </div></a>
+        <div onclick="load_location()" id="toolbar">
+          <img title="Location" class="icon" onclick="load_location()" src="{% static 'img/location.png' %}">
+        </div>
 
         <a href="/"><div id="toolbar">
           <img title="Cart" class="icon" src="{% static 'img/cart.png' %}">
         </div></a>
       </div>
 
+      <div data-aos="fade-down" id="main-div">
+        <div id="another-div"></div>
+      </div>
+
+      <div class="category-distance"></div>
+      <div data-aos="fade-down" data-aos-duration="750" id="product-container">
+        {% for Product in Products %}
+          <div id="product-div">
+            <img class="product-image" src="{{Product.image.url}}">
+            <div data-aos="zoom-in" data-aos-delay="1000" data-aos-duration="250" class="sale-tag">جدید</div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div data-aos="fade-down" data-aos-duration="750" id="news-container">
+        <div id="outer-div">
+          <div id="inner-div">
+          </div>
+        </div>
+        <div id="outer-div">
+          <div id="inner-div">
+          </div>
+        </div>
+      </div>
+
+      <div class="category-distance"></div>
+      <div data-aos="fade-down" data-aos-duration="750" id="product-container">
+        {% for Category in Categories %}
+          <div id="category-div">
+            <img class="category-image" src="{{Category.image.url}}">
+            <p class="category-title">{{Category.name}}</p>
+            <p class="category-description">{{Category.description}}</p>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="category-distance"></div>
+      <div class="footer"></div>
     </body>
     <script src="{% static 'js/index.js' %}">AOS.init();</script>
 </html>

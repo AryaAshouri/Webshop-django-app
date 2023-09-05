@@ -9,8 +9,8 @@ from .models import *
 app_name = "Branch"
 
 def home(request):
-	context = {"Categories" : Categorie.objects.filter(status = "p").order_by("-publish"),
-	"Products" : Product.objects.filter(status = "p").order_by("-publish"),
+	context = {"Categories" : Categorie.objects.filter(status = "p").order_by("-publish")[:4],
+	"Products" : Product.objects.filter(status = "p").order_by("-publish")[:4],
 	}
 	return render(request, "index.html", context)
 
