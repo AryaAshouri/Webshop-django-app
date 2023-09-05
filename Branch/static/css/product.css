@@ -19,71 +19,86 @@ Body {
   border-radius:15px;
   background-color:none;
 }
-#product {
-  background:rgb(48, 185, 219);
-  width:500px;
-  height:60px;
-  border-radius:10px;
-  text-align:center;
-  border:none;
-  font-family:Aviny;
-  font-size:34px;
-  color:white;
+#main-container {
+  justify-content:center;
+  margin:0px auto;
   display:flex;
-  margin:120px auto;
+}
+#product {
+  background:rgb(10,10,10);
+  border-radius:10px;
+  width:350px;
+  height:60px;
+  border:none;
+  text-align:center;
+  color:white;
+  font-family:Aviny;
+  font-size:30px;
+  padding-left:30px;
+  padding-right:30px;
+  margin-top:100px;
 }
 #price {
-  background:rgb(48, 185, 219);
-  width:500px;
-  height:60px;
+  background:rgb(10,10,10);
   border-radius:10px;
-  text-align:center;
+  width:350px;
+  height:60px;
   border:none;
-  font-family:Aviny;
-  font-size:34px;
+  text-align:center;
   color:white;
-  display:flex;
-  margin:-100px auto;
+  font-family:Aviny;
+  font-size:30px;
+  padding-left:30px;
+  padding-right:30px;
+  margin-top:20px;
 }
 #category {
-  background:rgb(48, 185, 219);
-  width:500px;
-  height:60px;
+  background:rgb(10,10,10);
   border-radius:10px;
-  text-align:center;
+  width:200px;
+  height:180px;
   border:none;
-  font-family:Aviny;
-  font-size:34px;
+  text-align:center;
   color:white;
-  display:flex;
-  margin:120px auto;
+  font-family:Aviny;
+  font-size:30px;
+  padding-left:30px;
+  padding-right:30px;
+  padding-top:190px;
 }
 #image {
-  font-family:calibri;
-  width:0px;
-  height:40px;
-  justify-content:center;
-  display:flex;
-  margin:-100px auto;
-  padding-top:20px;
-  color:white;
-  border:none;
+  background:rgb(10,10,10);
   border-radius:10px;
-  text-align: center;
-  background-color:rgb(48, 185, 219);
-  cursor: pointer;
-  padding-left:500px;
+  width:0px;
+  height:0px;
+  border:none;
+  text-align:center;
+  color:white;
+  font-family:Aviny;
+  font-size:30px;
+  padding-left:100px;
+  padding-right:100px;
+  padding-top:190px;
+  margin-top:20px;
+  margin-left:5px;
 }
 #submit {
-  background:rgb(48, 185, 219);
-  width:500px;
-  height:60px;
+  background:rgb(10,10,10);
   border-radius:10px;
-  text-align:center;
+  width:410px;
+  height:60px;
   border:none;
-  font-family:Aviny;
-  font-size:34px;
+  text-align:center;
   color:white;
-  display:flex;
-  margin:120px auto;
+  font-family:Aviny;
+  font-size:30px;
+  padding-left:30px;
+  padding-right:30px;
+  margin-top:-15px;
+}
+#select_title {
+  font-family:Aviny;
+  font-size:30px;
+  color:white;
+  margin:-200px 400px;
 }

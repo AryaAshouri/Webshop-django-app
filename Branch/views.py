@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
+from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from .forms import CreateUserForm
 from .models import *
@@ -13,19 +14,14 @@ def home(request):
 	}
 	return render(request, "index.html", context)
 
-def category(request):
-	return render(request, "category.html")
-
-def product(request):
+def offer(request):
 	if request.method == "POST":
 		name = request.POST.get("product")
 		price = request.POST.get("price")
-		category = request.POST.get("category")
+		category = request.POST["category"]
 		image = request.FILES.get("image")
-		if (name != "" and price != "" and category != "" and image != ""):
+
+		if (name != "" and price != "" and category != "" and image != None):
 			Product.objects.create(name=name, price=price, category=category, image=image, status="p")
-			return HttpResponseRedirect("/")
-		else:
-			return HttpResponseRedirect("/")
 
 	return render(request, "product.html")

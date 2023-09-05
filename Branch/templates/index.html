@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/index.css' %}">
-        <link rel="icon" href="{% static 'img/folder.png' %}">
+        <link rel="icon" href="{% static 'img/webshop.png' %}">
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <title>
             Webshop
@@ -13,48 +13,34 @@
     </head>
     <body>
 
-      <div data-aos="fade-down" id="center-toolbar">
-        <a href="/"><div style="width:60px; height:57px;" id="toolbar">
-          <img title="Home" id="home-reload" src="{% static 'img/home.png' %}">
+      <div id="icon-container" data-aos="fade-down">
+        <a href="/"><div id="toolbar">
+          <img title="Home" class="icon" src="{% static 'img/home.png' %}">
         </div></a>
-        <a href="/product"><div id="logo-bar">
-          <img title="Sell" id="selling" src="{% static 'img/sell.png' %}">
+
+        <a href="/offer"><div id="toolbar">
+          <img title="Offer" class="icon" src="{% static 'img/sell.png' %}">
         </div></a>
-        <div style="width:60px; height:57px;" id="toolbar">
-          <img title="Folder" id="category" src="{% static 'img/folder.png' %}">
-        </div>
 
-        <input title="Search" type="text" placeholder="جست و جو" id="search-bar">
-        <div title="Location" id="location-text">ایران</div>
+        <a href="/"><div id="toolbar">
+          <img title="Products" class="icon" src="{% static 'img/offers.png' %}">
+        </div></a>
 
-        <div onclick="load_search()" style="width:60px; height:57px;" id="toolbar">
-          <img title="Search" id="search" src="{% static 'img/search.png' %}">
-        </div>
-        <div onclick="load_location()" style="width:60px; height:57px;" id="toolbar">
-          <img title="Location" id="location" src="{% static 'img/location.png' %}">
-        </div>
-        <div id="profile-bar">
-          <img title="Cart" id="shopping-bag" src="{% static 'img/cart.png' %}">
-        </div>
+        <input type="text" placeholder="جست و جو" id="search-bar">
+
+        <a href="/"><div id="toolbar">
+          <img title="Search" class="icon" src="{% static 'img/search.png' %}">
+        </div></a>
+
+        <a href="/"><div id="toolbar">
+          <img title="Location" class="icon" src="{% static 'img/location.png' %}">
+        </div></a>
+
+        <a href="/"><div id="toolbar">
+          <img title="Cart" class="icon" src="{% static 'img/cart.png' %}">
+        </div></a>
       </div>
 
-      <div data-aos="fade-down" data-aos-duration="750" id="center_container">
-        {% for Category in Categories %}
-          <div id="main-product">
-            <img id="product-profile" src="{{Category.image.url}}">
-            <p id="procut-name">{{Category.name}}</p>
-            <p id="procut-description">{{Category.description}}</p>
-          </div>
-        {% endfor %}
-
-        {% for Product in Products %}
-          <div id="main-product">
-            <img id="product-profile" src="{{Product.image.url}}">
-            <p id="procut-name">{{Product.name}}</p>
-            <p id="procut-description">{{Product.description}}</p>
-          </div>
-        {% endfor %}
-      </div>
     </body>
     <script src="{% static 'js/index.js' %}">AOS.init();</script>
 </html>

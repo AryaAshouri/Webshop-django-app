@@ -5,6 +5,5 @@ app_name = "Branch"
 
 urlpatterns = [
     path('', home, name="home"),
-    path('category', category, name="category"),
-    path('product', product, name="product"),
+    path('offer', offer, name="offer"),
 ]
