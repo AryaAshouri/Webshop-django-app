@@ -9,6 +9,10 @@ from .models import *
 app_name = "Branch"
 
 def home(request):
+	if ("like" in request.POST):
+		obj = request.POST.get("liked_obj")
+		print(obj)
+
 	context = {"Categories" : Categorie.objects.filter(status = "p").order_by("-publish")[:4],
 	"Products" : Product.objects.filter(status = "p").order_by("-publish")[:4],
 	}
@@ -22,6 +26,7 @@ def offer(request):
 		image = request.FILES.get("image")
 
 		if (name != "" and price != "" and category != "" and image != None):
-			Product.objects.create(name=name, price=price, category=category, image=image, status="p")
+			Product.objects.create(name=name, price=price, category=category, image=image, sale="بدون تخفیف", likes=0, status="p")
+			return HttpResponseRedirect("/")
 
 	return render(request, "product.html")

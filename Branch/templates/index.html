@@ -46,12 +46,43 @@
         <div id="another-div"></div>
       </div>
 
+      <p data-aos="fade-down" data-aos-duration="750" id="last-products">آخرین کالا ها</p>
       <div class="category-distance"></div>
       <div data-aos="fade-down" data-aos-duration="750" id="product-container">
         {% for Product in Products %}
           <div id="product-div">
             <img class="product-image" src="{{Product.image.url}}">
-            <div data-aos="zoom-in" data-aos-delay="1000" data-aos-duration="250" class="sale-tag">جدید</div>
+            <p name="liked_obj" id="product-title">{{Product.name}}</p>
+            <p id="product-price">قیمت : {{Product.price}}</p>
+            <p id="product-sale">تخفیف: {{Product.sale}}</p>
+
+            <form method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button name="add" id="add">Add</button>
+              <button name="like" id="like">Like</button>
+            </form>
+            <div id="icon-heart-div">
+              <p id="heart-count">{{Product.likes}}</p>
+            </div>
+
+            <div id="icon-category-div">
+              {% if Product.category == "غذایی" %}
+                <img id="icon-category" src="{% static 'img/icon/food.png' %}">
+              {% elif Product.category == "وسایل خانه" %}
+                <img id="icon-category" src="{% static 'img/icon/furniture.png' %}">
+              {% elif Product.category == "پوشاک" %}
+                <img id="icon-category" src="{% static 'img/icon/clothes.png' %}">
+              {% elif Product.category == "اسباب بازی" %}
+                <img id="icon-category" src="{% static 'img/icon/toy.png' %}">
+              {% elif Product.category == "الکتریکی" %}
+                <img id="icon-category-electronic" src="{% static 'img/icon/electronic.png' %}">
+              {% elif Product.category == "هیپکدام" or Product.category == "دسته بندی" %}
+                <img id="icon-category" src="{% static 'img/icon/none.png' %}">
+              {% else %}
+                <img id="icon-category" src="{% static 'img/icon/none.png' %}">
+              {% endif %}
+            </div>
           </div>
         {% endfor %}
       </div>
