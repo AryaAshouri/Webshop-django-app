@@ -5,12 +5,17 @@
 *:focus {
   outline:none;
 }
+:root {
+  --main-bg-color: #A6E1FA;
+  --body-bg-color: black;
+  --inner-div-bg-color: #BAE7FF;
+}
 a {
   text-decoration:none;
   color:white;
 }
 Body {
-    background-color:black;
+    background-color:var(--body-bg-color);
 }
 ::-webkit-scrollbar {
   width:0px;
@@ -20,7 +25,6 @@ Body {
   background-color:none;
 }
 #toolbar {
-  background-color:rgb(20,20,20);
   width:60px;
   height:60px;
   border-radius:10px;
@@ -48,7 +52,6 @@ Body {
   width:870px;
   height:60px;
   border-radius:10px;
-  background:rgb(20,20,20);
   border:none;
   margin:10px 5px;
   font-family:Aviny;
@@ -62,22 +65,32 @@ Body {
   transform:scale(1.005);
 }
 #location-bar {
-  width:870px;
-  height:53px;
+  width:0px;
+  height:60px;
   border-radius:10px;
-  background:rgb(20,20,20);
   border:none;
   margin:10px 5px;
   font-family:Aviny;
   font-size:26px;
   color:white;
   text-align:center;
-  padding-top:7px;
   display:none;
+  opacity:1;
   transition:0.2s;
 }
 #location-bar:hover {
   transform:scale(1.005);
+}
+#location-bar::placeholder {
+  opacity: 1;
+}
+@keyframes loadAnimation {
+  0% { height:0px; margin-top:40px; }
+  
+  100% { height:60px; margin-top:10px; }
+}
+.animation_load {
+  animation: loadAnimation 0.3s forwards;
 }
 #product-container {
   justify-content:center;
@@ -85,7 +98,6 @@ Body {
   margin-top:100px;
 }
 #product-div {
-  background:rgb(20,20,20);
   width:270px;
   height:270px;
   margin:40px 30px;
@@ -109,7 +121,6 @@ Body {
   width:95.5%;
   height:500px;
   border-radius:20px;
-  background:rgb(20,20,20);
   justify-content:center;
   display:flex;
   margin:0px auto;
@@ -118,7 +129,6 @@ Body {
   width:94%;
   height:420px;
   border-radius:20px;
-  background:rgb(30,30,30);
   justify-content:center;
   display:flex;
   margin:40px auto;
@@ -137,7 +147,6 @@ Body {
   margin-left:230px;
 }
 #category-div {
-  background:rgb(20,20,20);
   width:260px;
   height:400px;
   margin:40px 30px;
@@ -180,7 +189,6 @@ Body {
 .footer {
   width:100%;
   height:400px;
-  background:rgb(20,20,20);
 }
 #news-container {
   justify-content:center;
@@ -191,7 +199,6 @@ Body {
   width:600px;
   height:350px;
   border-radius:20px;
-  background:rgb(20,20,20);
   display:inline-block;
   margin:50px 40px;
 }
@@ -199,8 +206,21 @@ Body {
   width:520px;
   height:270px;
   border-radius:20px;
-  background:rgb(30,30,30);
   margin:40px auto;
   justify-content:center;
   display:flex;
+}
+#toolbar,
+#search-bar,
+#location-bar,
+#product-div,
+#main-div,
+#another-div,
+#category-div,
+.footer,
+#outer-div {
+  background-color: var(--main-bg-color);
+}
+#inner-div {
+  background-color: var(--inner-div-bg-color);
 }

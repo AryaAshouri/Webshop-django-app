@@ -27,7 +27,7 @@
         </div></a>
 
         <input type="text" placeholder="جست و جو" id="search-bar">
-        <div id="location-bar">ایران</div>
+        <input type="text" placeholder="در حال بارگیری" disabled id="location-bar">
 
         <div onclick="load_search()" id="toolbar">
           <img title="Search" class="icon" onclick="load_search()" src="{% static 'img/search.png' %}">
@@ -59,6 +59,7 @@
       <div data-aos="fade-down" data-aos-duration="750" id="news-container">
         <div id="outer-div">
           <div id="inner-div">
+            <p></p>
           </div>
         </div>
         <div id="outer-div">
