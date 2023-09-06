@@ -140,7 +140,7 @@ Body {
   height:52px;
   font-family:Aviny;
   font-size:24px;
-  color:rgb(20,20,20);
+  color:var(--main-bg-color);
   text-align:center;
   padding-top:7px;
   margin-top:-290px;
