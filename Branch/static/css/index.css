@@ -114,8 +114,12 @@ Body {
   font-family:Aviny;
   font-size:36px;
   color:white;
+  border:none;
   text-align:center;
-  margin:-40px 0px;
+  margin:-190px 0px;
+  background-color:transparent;
+  width:200px;
+  height:30px;;
 }
 #product-price {
   font-family:Aviny;
@@ -148,7 +152,7 @@ Body {
   color:var(--main-bg-color);
   font-family:Aviny;
   font-size:24px;
-  margin:40px -45px;
+  margin:190px -45px;
   transition:0.3s;
 }
 #like:hover {
@@ -199,14 +203,14 @@ Body {
   border-radius:50px;
   height:60px;
   width:60px;
-  margin:-130px -20px;
+  margin:-120px -20px;
   background:var(--icon-category-div-bg-color);
 }
 #icon-category-div {
   border-radius:50px;
   height:60px;
   width:60px;
-  margin:140px -20px;
+  margin:100px -20px;
   background:var(--icon-category-div-bg-color);
 }
 #another-div {

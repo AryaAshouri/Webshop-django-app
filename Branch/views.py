@@ -1,25 +1,29 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
-from .forms import CreateUserForm
 from .models import *
 app_name = "Branch"
 
 def home(request):
-	if ("like" in request.POST):
-		obj = request.POST.get("liked_obj")
-		print(obj)
+	if request.method == "POST" and "like" in request.POST:
+		product_name_from_pTag = request.POST.get("liked_obj")
+		product_name = product_name_from_pTag
+		product = Product.objects.get(name=product_name)
+		product.likes = int(product.likes) + 1
+		product.save()
 
-	context = {"Categories" : Categorie.objects.filter(status = "p").order_by("-publish")[:4],
-	"Products" : Product.objects.filter(status = "p").order_by("-publish")[:4],
+	context = {
+	"Categories": Categorie.objects.filter(status="p").order_by("-publish")[:4],
+	"Products": Product.objects.filter(status="p").order_by("-publish")[:4],
 	}
 	return render(request, "index.html", context)
 
 def offer(request):
-	if request.method == "POST":
+	if (request.method == "POST"):
 		name = request.POST.get("product")
 		price = request.POST.get("price")
 		category = request.POST["category"]

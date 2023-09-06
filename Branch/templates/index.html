@@ -52,13 +52,14 @@
         {% for Product in Products %}
           <div id="product-div">
             <img class="product-image" src="{{Product.image.url}}">
-            <p name="liked_obj" id="product-title">{{Product.name}}</p>
+            
             <p id="product-price">قیمت : {{Product.price}}</p>
             <p id="product-sale">تخفیف: {{Product.sale}}</p>
 
             <form method="POST" enctype="multipart/form-data">
               {% csrf_token %}
               {{ form.as_p }}
+              <input name="liked_obj" id="product-title" value="{{Product.name}}">
               <button name="add" id="add">Add</button>
               <button name="like" id="like">Like</button>
             </form>
