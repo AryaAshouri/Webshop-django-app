@@ -1,23 +1,23 @@
 first_search_time = false;
 counter = 0;
-
+changed_width = "60%"
 function load_search(){
   document.getElementById("location-bar").placeholder = "در حال بارگیری";
   counter = 0;
-  if (document.getElementById("location-bar").style.width = "870px"){
+  if (document.getElementById("location-bar").style.width = changed_width){
     document.getElementById("location-bar").style.width = "0px";
     document.getElementById("location-bar").style.display = "none"
 
     if (first_search_time == true){
       document.getElementById("search-bar").style.display = "block"
-      document.getElementById("search-bar").style.width = "870px"
-      document.getElementById("search-bar").classList.add("animation_load");
+      document.getElementById("search-bar").style.width = changed_width
+      document.getElementById("search-bar").classList.add("bar_loading_animation");
     }
   }
   else {
     document.getElementById("search-bar").style.display = "block"
-    document.getElementById("search-bar").style.width = "870px"
-    document.getElementById("search-bar").classList.add("animation_load");
+    document.getElementById("search-bar").style.width = changed_width
+    document.getElementById("search-bar").classList.add("bar_loading_animation");
   }
 }
 function load_location(){
@@ -71,18 +71,18 @@ function load_location(){
   }
 
   first_search_time = true;
-  if (document.getElementById("search-bar").style.width = "870px"){
+  if (document.getElementById("search-bar").style.width = changed_width){
     document.getElementById("search-bar").style.width = "0px";
     document.getElementById("search-bar").style.display = "none"
 
     document.getElementById("location-bar").style.display = "block"
-    document.getElementById("location-bar").style.width = "870px"
-    document.getElementById("location-bar").classList.add("animation_load");
+    document.getElementById("location-bar").style.width = changed_width
+    document.getElementById("location-bar").classList.add("bar_loading_animation");
   }
   else {
     document.getElementById("location-bar").style.display = "block"
-    document.getElementById("location-bar").style.width = "870px"
-    document.getElementById("location-bar").classList.add("animation_load");
+    document.getElementById("location-bar").style.width = changed_width
+    document.getElementById("location-bar").classList.add("bar_loading_animation");
   }
 }
 AOS.init()

@@ -35,17 +35,24 @@
         </div></a>
       </div>
 
+      <div id="main-news-board"></div>
+
       <div id="product-container">
         {% for Product in Products %}
           <div id="product-structure">
-            <img id="product-image" src="{{Product.image.url}}">
+            <img id="product-image" src="{{Product.image.url}}">            
             <form method="POST" enctype="multipart/form-data">
-              {% csrf_token %}
-              {{ form.as_p }}
-              <button title="Add" name="add-product-button" id="add">Add</button>
-              <button title="Like" name="like-product-button" id="like">Like</button>
-              <input name="liked-product" id="product-title" value="{{Product.name}}" disabled>
+              <div id="product-data-container">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input name="liked-product" id="product-title" value="{{Product.name}}" disabled>
+                <p id="product-price">قیمت کالا : {{Product.price}}</p>
+                <p id="product-category">دسته بندی کالا : {{Product.category}}</p>
+              </div>
+              <button title="Add" name="add-product-button" id="add-product-button">افزودن</button>
+              <button title="Like" name="like-product-button" id="like-product-button">پسند</button>
             </form>
+          </div>
         {% endfor %}
       </div>
     </body>
