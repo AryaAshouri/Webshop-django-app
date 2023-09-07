@@ -10,14 +10,26 @@ app_name = "Branch"
 
 def home(request):
 	if request.method == "POST" and "like-product-button" in request.POST:
-		product_name = request.POST.get("liked-product")
+		product_name = request.POST.get("product-name")
 		product = Product.objects.get(name=product_name)
 		product.likes = int(product.likes) + 1
 		product.save()
 
+	elif request.method == "POST" and "add-product-button" in request.POST:
+		main_product = request.POST.get("product-name")
+		product = Product.objects.get(name=main_product)
+		product_name = product.name
+		product_price = product.price
+		product_category = product.category
+		product_likes = product.likes
+		product_image = product.image
+		Cart.objects.create(name=product_name, price=product_price, category=product_category, likes=product_likes, image=product_image, status="p")
+		
+	count = Cart.objects.filter(status="p").count() #count is method which can calculate number of objects!
 	context = {
 	"Categories": Categorie.objects.filter(status="p").order_by("-publish")[:4],
 	"Products": Product.objects.filter(status="p").order_by("-publish")[:4],
+	"Count" : count,
 	}
 	return render(request, "index.html", context)
 
@@ -33,3 +45,9 @@ def offer(request):
 			return HttpResponseRedirect("/")
 
 	return render(request, "offer.html")
+
+def cart(request):
+	context = {
+	"Carts": Cart.objects.filter(status="p").order_by("-publish"),
+	}
+	return render(request, "cart.html", context)

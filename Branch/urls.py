@@ -6,4 +6,5 @@ app_name = "Branch"
 urlpatterns = [
     path('', home, name="home"),
     path('offer', offer, name="offer"),
+    path('cart', cart, name="cart")
 ]

@@ -32,25 +32,29 @@
         </div>
         <a href="/"><div id="toolbar">
           <img title="Cart" id="icon" src="{% static 'img/icon/toolbar/cart.png' %}">
+          {% if Count > 0 %}
+            <div id="cart-product-count">{{Count}}</div>
+          {% endif %}
         </div></a>
       </div>
-
       <div data-aos="fade-down" id="main-news-board"></div>
 
       <div data-aos="fade-up" data-aos-duration="750" id="product-container">
         {% for Product in Products %}
           <div id="product-structure">
-            <img id="product-image" src="{{Product.image.url}}">            
+            <img id="product-image" src="{{Product.image.url}}">           
             <form method="POST" enctype="multipart/form-data">
               <div id="product-data-container">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <input type="text" name="liked-product" id="product-title" value="{{Product.name}}" readonly>
-                <p id="product-price">قیمت کالا : {{Product.price}}</p>
-                <p id="product-category">دسته بندی کالا : {{Product.category}}</p>
+                <input type="text" name="product-name" id="product-title" value="{{Product.name}}" readonly>
+                <p name="product-price" id="product-price">قیمت کالا : {{Product.price}}</p>
+                <p name="product-category" id="product-category">دسته بندی کالا : {{Product.category}}</p>
               </div>
               <button title="Add" name="add-product-button" id="add-product-button">افزودن</button>
               <button title="Like" name="like-product-button" id="like-product-button">پسند</button>
+              <img name="fake-product-image" id="fake-product-image" src="{{Product.image.url}}"> 
+              <div id="fake-product-likes-section">{{Product.likes}}</div>
             </form>
             <div id="product-likes-section">تعداد پسند های کالا : {{Product.likes}}</div>
           </div>
