@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link rel="stylesheet" href="{% static 'css/product.css' %}">
+    <link rel="stylesheet" href="{% static 'css/offer.css' %}">
     <link rel="icon" href="{% static 'img/icon/toolbar/webshop.png' %}">
     <title>
       Webshop | Offer
     </title>
   </head>
   <body>
-    <div id="main-container" data-aos="fade-down">
+    <div data-aos="fade-down" id="input-container">
       <form method="POST" enctype="multipart/form-data">
           {% csrf_token %}
           {{ form.as_p }}
-          <input autocomplete="off" name="product" id="product" type="text" placeholder="نام کالا">
+          <input type="text" autocomplete="off" name="product-name-input" id="product-name-input" placeholder="نام کالا">
           <br>
-          <input autocomplete="off" name="price" id="price" type="text" placeholder="قیمت کالا">
+          <input type="text" autocomplete="off" name="product-price-input" id="product-price-input" placeholder="قیمت کالا">
           <br>
-          <select name="category" id="category">
+          <select name="product-category-input" id="product-category-input">
             <option>دسته بندی</option>
             <option>پوشاک</option>
             <option>الکتریکی</option>
@@ -29,11 +29,11 @@
             <option>وسایل خانه</option>
             <option>هیچکدام</option>
           </select>
-          <input name="image" id="image" type="file">
+          <input type="file" name="product-image-input" id="product-image-input">
           <br>
-          <input onclick="check_form" type="submit" value="ثبت آگهی" id="submit">
+          <input type="submit" name="product-submit-input" id="product-submit-input" value="ثبت آگهی">
       </form>
     </div>
-    <script src="{% static 'js/product.js' %}"></script>
+    <script src="{% static 'js/offer.js' %}"></script>
   </body>
 </html>

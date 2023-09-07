@@ -23,13 +23,13 @@ def home(request):
 
 def offer(request):
 	if (request.method == "POST"):
-		name = request.POST.get("product")
-		price = request.POST.get("price")
-		category = request.POST["category"]
-		image = request.FILES.get("image")
+		name = request.POST.get("product-name-input")
+		price = request.POST.get("product-price-input")
+		category = request.POST["product-category-input"]
+		image = request.FILES.get("product-image-input")
 
 		if (name != "" and price != "" and category != "" and image != None):
-			Product.objects.create(name=name, price=price, category=category, image=image, sale="بدون تخفیف", likes=0, status="p")
+			Product.objects.create(name=name, price=price, category=category, image=image, likes=0, status="p")
 			return HttpResponseRedirect("/")
 
-	return render(request, "product.html")
+	return render(request, "offer.html")

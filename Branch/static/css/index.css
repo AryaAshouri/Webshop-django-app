@@ -1,6 +1,6 @@
 * {
-    padding:0px;
-    margin:0px;
+  padding:0px;
+  margin:0px;
 }
 *:focus {
   outline:none;
@@ -21,7 +21,7 @@ a {
   color:white;
 }
 Body {
-    background-color:black;
+  background-color:black;
 }
 @keyframes change_current_bar {
   0% { transform:scale(0) }
