@@ -6,38 +6,38 @@
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <link rel="stylesheet" href="{% static 'css/index.css' %}">
-        <link rel="icon" href="{% static 'img/webshop.png' %}">
+        <link rel="icon" href="{% static 'img/icon/toolbar/webshop.png' %}">
         <title>
-            Webshop
+            Webshop | Home
         </title>
     </head>
     <body>
-      <div id="toolbar-icon-container">
+      <div data-aos="fade-down" id="toolbar-icon-container">
         <a href="/"><div id="toolbar">
-          <img title="Home" id="icon" src="{% static 'img/home.png' %}">
+          <img title="Home" id="icon" src="{% static 'img/icon/toolbar/home.png' %}">
         </div></a>
         <a href="/offer"><div id="toolbar">
-          <img title="Offer" id="icon" src="{% static 'img/sell.png' %}">
+          <img title="Offer" id="icon" src="{% static 'img/icon/toolbar/sell.png' %}">
         </div></a>
         <a href="/"><div id="toolbar">
-          <img title="Products" id="icon" src="{% static 'img/offers.png' %}">
+          <img title="Products" id="icon" src="{% static 'img/icon/toolbar/offers.png' %}">
         </div></a>
         <input type="text" placeholder="جست و جو" id="search-bar">
         <input type="text" placeholder="در حال بارگیری" id="location-bar" readonly>
         <div onclick="load_search()" id="toolbar">
-          <img title="Search" id="icon" onclick="load_search()" src="{% static 'img/search.png' %}">
+          <img title="Search" id="icon" onclick="load_search()" src="{% static 'img/icon/toolbar/search.png' %}">
         </div>
         <div onclick="load_location()" id="toolbar">
-          <img title="Location" id="icon" onclick="load_location()" src="{% static 'img/location.png' %}">
+          <img title="Location" id="icon" onclick="load_location()" src="{% static 'img/icon/toolbar/location.png' %}">
         </div>
         <a href="/"><div id="toolbar">
-          <img title="Cart" id="icon" src="{% static 'img/cart.png' %}">
+          <img title="Cart" id="icon" src="{% static 'img/icon/toolbar/cart.png' %}">
         </div></a>
       </div>
 
-      <div id="main-news-board"></div>
+      <div data-aos="fade-down" id="main-news-board"></div>
 
-      <div id="product-container">
+      <div data-aos="fade-down" data-aos-duration="750" id="product-container">
         {% for Product in Products %}
           <div id="product-structure">
             <img id="product-image" src="{{Product.image.url}}">            
