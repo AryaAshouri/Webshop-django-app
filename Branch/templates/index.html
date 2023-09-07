@@ -12,107 +12,42 @@
         </title>
     </head>
     <body>
-
-      <div id="icon-container" data-aos="fade-down">
+      <div id="toolbar-icon-container">
         <a href="/"><div id="toolbar">
-          <img title="Home" class="icon" src="{% static 'img/home.png' %}">
+          <img title="Home" id="icon" src="{% static 'img/home.png' %}">
         </div></a>
-
         <a href="/offer"><div id="toolbar">
-          <img title="Offer" class="icon" src="{% static 'img/sell.png' %}">
+          <img title="Offer" id="icon" src="{% static 'img/sell.png' %}">
         </div></a>
-
         <a href="/"><div id="toolbar">
-          <img title="Products" class="icon" src="{% static 'img/offers.png' %}">
+          <img title="Products" id="icon" src="{% static 'img/offers.png' %}">
         </div></a>
-
         <input type="text" placeholder="جست و جو" id="search-bar">
         <input type="text" placeholder="در حال بارگیری" disabled id="location-bar">
-
         <div onclick="load_search()" id="toolbar">
-          <img title="Search" class="icon" onclick="load_search()" src="{% static 'img/search.png' %}">
+          <img title="Search" id="icon" onclick="load_search()" src="{% static 'img/search.png' %}">
         </div>
-
         <div onclick="load_location()" id="toolbar">
-          <img title="Location" class="icon" onclick="load_location()" src="{% static 'img/location.png' %}">
+          <img title="Location" id="icon" onclick="load_location()" src="{% static 'img/location.png' %}">
         </div>
-
         <a href="/"><div id="toolbar">
-          <img title="Cart" class="icon" src="{% static 'img/cart.png' %}">
+          <img title="Cart" id="icon" src="{% static 'img/cart.png' %}">
         </div></a>
       </div>
 
-      <div data-aos="fade-down" id="main-div">
-        <div id="another-div"></div>
-      </div>
-
-      <p data-aos="fade-down" data-aos-duration="750" id="last-products">آخرین کالا ها</p>
-      <div class="category-distance"></div>
-      <div data-aos="fade-down" data-aos-duration="750" id="product-container">
+      <div id="product-container">
         {% for Product in Products %}
-          <div id="product-div">
-            <img class="product-image" src="{{Product.image.url}}">
-            
-            <p id="product-price">قیمت : {{Product.price}}</p>
-            <p id="product-sale">تخفیف: {{Product.sale}}</p>
-
+          <div id="product-structure">
+            <img id="product-image" src="{{Product.image.url}}">
             <form method="POST" enctype="multipart/form-data">
               {% csrf_token %}
               {{ form.as_p }}
-              <input name="liked_obj" id="product-title" value="{{Product.name}}">
-              <button name="add" id="add">Add</button>
-              <button name="like" id="like">Like</button>
+              <button title="Add" name="add-product-button" id="add">Add</button>
+              <button title="Like" name="like-product-button" id="like">Like</button>
+              <input name="liked-product" id="product-title" value="{{Product.name}}" disabled>
             </form>
-            <div id="icon-heart-div">
-              <p id="heart-count">{{Product.likes}}</p>
-            </div>
-
-            <div id="icon-category-div">
-              {% if Product.category == "غذایی" %}
-                <img id="icon-category" src="{% static 'img/icon/food.png' %}">
-              {% elif Product.category == "وسایل خانه" %}
-                <img id="icon-category" src="{% static 'img/icon/furniture.png' %}">
-              {% elif Product.category == "پوشاک" %}
-                <img id="icon-category" src="{% static 'img/icon/clothes.png' %}">
-              {% elif Product.category == "اسباب بازی" %}
-                <img id="icon-category" src="{% static 'img/icon/toy.png' %}">
-              {% elif Product.category == "الکتریکی" %}
-                <img id="icon-category-electronic" src="{% static 'img/icon/electronic.png' %}">
-              {% elif Product.category == "هیپکدام" or Product.category == "دسته بندی" %}
-                <img id="icon-category" src="{% static 'img/icon/none.png' %}">
-              {% else %}
-                <img id="icon-category" src="{% static 'img/icon/none.png' %}">
-              {% endif %}
-            </div>
-          </div>
         {% endfor %}
       </div>
-
-      <div data-aos="fade-down" data-aos-duration="750" id="news-container">
-        <div id="outer-div">
-          <div id="inner-div">
-            <p></p>
-          </div>
-        </div>
-        <div id="outer-div">
-          <div id="inner-div">
-          </div>
-        </div>
-      </div>
-
-      <div class="category-distance"></div>
-      <div data-aos="fade-down" data-aos-duration="750" id="product-container">
-        {% for Category in Categories %}
-          <div id="category-div">
-            <img class="category-image" src="{{Category.image.url}}">
-            <p class="category-title">{{Category.name}}</p>
-            <p class="category-description">{{Category.description}}</p>
-          </div>
-        {% endfor %}
-      </div>
-
-      <div class="category-distance"></div>
-      <div class="footer"></div>
     </body>
     <script src="{% static 'js/index.js' %}">AOS.init();</script>
 </html>
