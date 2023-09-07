@@ -1,0 +1,26 @@
+* {
+  padding:0px;
+  margin:0px;
+}
+*:focus {
+  outline:none;
+}
+:root {
+  --main-bg-color:#A6E1FA;
+  --main-darker-bg-color: #C8F5FF;
+}
+::-webkit-scrollbar {
+  width:0px;
+}
+::-webkit-scrollbar-track {
+  border-radius:10px;
+  background-color:none;
+}
+a {
+  text-decoration:none;
+  color:white;
+}
+Body {
+  background-color:white;
+  user-select:none;
+}

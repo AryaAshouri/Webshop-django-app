@@ -7,6 +7,7 @@ from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from .models import *
 app_name = "Branch"
+dict_of_cart_products = {}
 
 def home(request):
 	if request.method == "POST" and "like-product-button" in request.POST:
@@ -23,8 +24,14 @@ def home(request):
 		product_category = product.category
 		product_likes = product.likes
 		product_image = product.image
-		Cart.objects.create(name=product_name, price=product_price, category=product_category, likes=product_likes, image=product_image, status="p")
-		
+	
+		global dict_of_cart_products
+		dict_of_cart_products.update({product_name : product_price})
+		for name, price in dict_of_cart_products.items():
+			if (name == product_name and price == product_price):
+				Cart.objects.filter(name=name).delete()
+				Cart.objects.create(name=product_name, price=product_price, category=product_category, likes=product_likes, image=product_image, status="p")
+
 	count = Cart.objects.filter(status="p").count() #count is method which can calculate number of objects!
 	context = {
 	"Categories": Categorie.objects.filter(status="p").order_by("-publish")[:4],

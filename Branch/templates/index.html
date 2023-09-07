@@ -30,7 +30,7 @@
         <div onclick="load_location()" id="toolbar">
           <img title="Location" id="icon" onclick="load_location()" src="{% static 'img/icon/toolbar/location.png' %}">
         </div>
-        <a href="/"><div id="toolbar">
+        <a href="/cart"><div id="toolbar">
           <img title="Cart" id="icon" src="{% static 'img/icon/toolbar/cart.png' %}">
           {% if Count > 0 %}
             <div id="cart-product-count">{{Count}}</div>
