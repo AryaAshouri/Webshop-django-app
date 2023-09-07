@@ -20,6 +20,9 @@ a {
   text-decoration:none;
   color:white;
 }
+input::selection {
+  background-color: transparent;
+}
 Body {
   background-color:black;
   user-select:none;
@@ -100,7 +103,7 @@ Body {
   text-align:center;
   margin:-80px 40px;
 }
-  #main-news-board {
+#main-news-board {
   width:92.5%;
   height:500px;
   border-radius:15px;

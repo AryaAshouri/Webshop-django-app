@@ -20,7 +20,129 @@ a {
   text-decoration:none;
   color:white;
 }
+input::selection {
+  background-color: transparent;
+}
 Body {
-  background-color:white;
+  background-color:black;
   user-select:none;
+}
+#product-container {
+  justify-content:center;
+  margin:30px auto;
+  width:95%;
+}
+#product-structure {
+  width:280px;
+  height:420px;
+  border-radius:15px 15px 0 0;
+  background:var(--main-bg-color);
+  display:inline-block;
+  margin:60px 18.68px;
+}
+#product-data-container {
+  background-color:white;
+  width:200px;
+  height:110px;
+  margin:-30px 40px;
+}
+#product-image {
+  width:200px;
+  height:160px;
+  border-radius:15px 15px 0px 0px;
+  margin:40px 40px;
+}
+#product-title {
+  font-family:Aviny;
+  font-size:32px;
+  color:var(--main-bg-color); 
+  background:transparent;
+  border:none;
+  width:200px;
+  text-align:center;
+  margin:0px 0px;
+  cursor:default;
+}
+#product-price {
+  font-family:Aviny;
+  font-size:18px;
+  color:var(--main-bg-color); 
+  background:transparent;
+  border:none;
+  width:200px;
+  text-align:center;
+  margin:-10px 0px;
+  cursor:default;
+}
+#product-category {
+  font-family:Aviny;
+  font-size:18px;
+  color:var(--main-bg-color); 
+  background:transparent;
+  border:none;
+  width:200px;
+  text-align:center;
+  margin:5px 0px;
+  cursor:default;
+}
+#add-product-button {
+  width:97px;
+  height:40px;
+  border-radius:0px 0px 0px 15px;
+  background:white;
+  border:none;
+  font-family:Aviny;
+  font-size:26px;
+  color:var(--main-bg-color);
+  margin-left:40px;
+  margin-top:45px;
+  transition:0.5s;
+  cursor:pointer;
+}
+#add-product-button:hover {
+  background:var(--main-darker-bg-color);
+  color:white;
+}
+#like-product-button {
+  width:97px;
+  height:40px;
+  border-radius:0px 0px 15px 0px;
+  background:white;
+  border:none;
+  font-family:Aviny;
+  font-size:26px;
+  color:var(--main-bg-color);
+  margin-top:45px;
+  transition:0.5s;
+  cursor:pointer;
+}
+#product-likes-section {
+  width:280px;
+  height:40px;
+  margin-top:55px;
+  background:var(--main-bg-color);
+  border-radius:0 0 15px 15px;
+  font-family:Aviny;
+  font-size:24px;
+  color:white;
+  text-align:center;
+  cursor:default;
+}
+#fake-product-image {
+  display:none;
+}
+#fake-product-likes-section {
+  display:none;
+}
+#like-product-button:hover {
+  background:var(--main-darker-bg-color);
+  color:white;
+}
+@media only screen and (max-width: 1200px) {
+  #main-news-board {
+    width:94%;
+  }
+  #product-structure {
+    margin-left:55px;
+  }
 }
