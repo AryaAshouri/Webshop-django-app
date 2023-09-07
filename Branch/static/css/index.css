@@ -43,6 +43,7 @@ Body {
   background:var(--main-bg-color);
   margin:20px 5px;
   transition:0.2s;
+  cursor:pointer;
 }
 #toolbar:hover {
   transform:scale(1.05);
@@ -52,6 +53,7 @@ Body {
   height:55px;
   margin:3px 3px;
   transition:0.2s;
+  cursor:pointer;
 }
 #search-bar {
   width:60%;
@@ -81,6 +83,7 @@ Body {
   font-size:28px;
   color:white;
   display:none;
+  cursor:default;
 }
 #location-bar::placeholder {
   opacity: 1;
@@ -100,10 +103,10 @@ Body {
 #product-structure {
   width:280px;
   height:420px;
-  border-radius:15px;
+  border-radius:15px 15px 0 0;
   background:var(--main-bg-color);
   display:inline-block;
-  margin:30px 18.68px;
+  margin:60px 18.68px;
 }
 #product-data-container {
   background-color:white;
@@ -114,7 +117,7 @@ Body {
 #product-image {
   width:200px;
   height:160px;
-  border-radius:10px 10px 0px 0px;
+  border-radius:15px 15px 0px 0px;
   margin:40px 40px;
 }
 #product-title {
@@ -126,6 +129,7 @@ Body {
   width:200px;
   text-align:center;
   margin:0px 0px;
+  cursor:default;
 }
 #product-price {
   font-family:Aviny;
@@ -136,6 +140,7 @@ Body {
   width:200px;
   text-align:center;
   margin:-10px 0px;
+  cursor:default;
 }
 #product-category {
   font-family:Aviny;
@@ -146,6 +151,7 @@ Body {
   width:200px;
   text-align:center;
   margin:5px 0px;
+  cursor:default;
 }
 #add-product-button {
   width:97px;
@@ -159,6 +165,7 @@ Body {
   margin-left:40px;
   margin-top:45px;
   transition:0.5s;
+  cursor:pointer;
 }
 #add-product-button:hover {
   background:var(--main-darker-bg-color);
@@ -175,6 +182,19 @@ Body {
   color:var(--main-bg-color);
   margin-top:45px;
   transition:0.5s;
+  cursor:pointer;
+}
+#product-likes-section {
+  width:280px;
+  height:40px;
+  margin-top:55px;
+  background:var(--main-bg-color);
+  border-radius:0 0 15px 15px;
+  font-family:Aviny;
+  font-size:24px;
+  color:white;
+  text-align:center;
+  cursor:default;
 }
 #like-product-button:hover {
   background:var(--main-darker-bg-color);
@@ -183,5 +203,8 @@ Body {
 @media only screen and (max-width: 1200px) {
   #main-news-board {
     width:94%;
+  }
+  #product-structure {
+    margin-left:55px;
   }
 }

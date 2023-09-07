@@ -23,7 +23,7 @@
           <img title="Products" id="icon" src="{% static 'img/offers.png' %}">
         </div></a>
         <input type="text" placeholder="جست و جو" id="search-bar">
-        <input type="text" placeholder="در حال بارگیری" disabled id="location-bar">
+        <input type="text" placeholder="در حال بارگیری" id="location-bar" readonly>
         <div onclick="load_search()" id="toolbar">
           <img title="Search" id="icon" onclick="load_search()" src="{% static 'img/search.png' %}">
         </div>
@@ -45,13 +45,14 @@
               <div id="product-data-container">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <input name="liked-product" id="product-title" value="{{Product.name}}" disabled>
+                <input type="text" name="liked-product" id="product-title" value="{{Product.name}}" readonly>
                 <p id="product-price">قیمت کالا : {{Product.price}}</p>
                 <p id="product-category">دسته بندی کالا : {{Product.category}}</p>
               </div>
               <button title="Add" name="add-product-button" id="add-product-button">افزودن</button>
               <button title="Like" name="like-product-button" id="like-product-button">پسند</button>
             </form>
+            <div id="product-likes-section">تعداد پسند های کالا : {{Product.likes}}</div>
           </div>
         {% endfor %}
       </div>

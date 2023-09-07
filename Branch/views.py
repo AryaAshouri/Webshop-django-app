@@ -9,9 +9,8 @@ from .models import *
 app_name = "Branch"
 
 def home(request):
-	if request.method == "POST" and "like" in request.POST:
-		product_name_from_pTag = request.POST.get("liked-product")
-		product_name = product_name_from_pTag
+	if request.method == "POST" and "like-product-button" in request.POST:
+		product_name = request.POST.get("liked-product")
 		product = Product.objects.get(name=product_name)
 		product.likes = int(product.likes) + 1
 		product.save()
