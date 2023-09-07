@@ -10,27 +10,29 @@ app_name = "Branch"
 dict_of_cart_products = {}
 
 def home(request):
+	global dict_of_cart_products
 	if request.method == "POST" and "like-product-button" in request.POST:
 		product_name = request.POST.get("product-name")
 		product = Product.objects.get(name=product_name)
 		product.likes = int(product.likes) + 1
 		product.save()
 
-	elif request.method == "POST" and "add-product-button" in request.POST:
-		main_product = request.POST.get("product-name")
-		product = Product.objects.get(name=main_product)
-		product_name = product.name
 		product_price = product.price
-		product_category = product.category
-		product_likes = product.likes
-		product_image = product.image
-	
-		global dict_of_cart_products
 		dict_of_cart_products.update({product_name : product_price})
 		for name, price in dict_of_cart_products.items():
 			if (name == product_name and price == product_price):
 				Cart.objects.filter(name=name).delete()
-				Cart.objects.create(name=product_name, price=product_price, category=product_category, likes=product_likes, image=product_image, status="p")
+				Cart.objects.create(name=product_name, price=product.price, category=product.category, likes=product.likes, image=product.image, status="p")
+
+	elif request.method == "POST" and "add-product-button" in request.POST:
+		main_product = request.POST.get("product-name")
+		product = Product.objects.get(name=main_product)
+	
+		dict_of_cart_products.update({product_name : product_price})
+		for name, price in dict_of_cart_products.items():
+			if (name == product_name and price == product_price):
+				Cart.objects.filter(name=name).delete()
+				Cart.objects.create(name=product_name, price=product_price, category=product.category, likes=product.likes, image=product.image, status="p")
 
 	count = Cart.objects.filter(status="p").count() #count is method which can calculate number of objects!
 	context = {
