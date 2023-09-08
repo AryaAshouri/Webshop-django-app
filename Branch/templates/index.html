@@ -48,7 +48,7 @@
                 {% csrf_token %}
                 {{ form.as_p }}
                 <input type="text" name="product-name" id="product-title" value="{{Product.name}}" readonly>
-                <p name="product-price" id="product-price">قیمت کالا : {{Product.price}}</p>
+                <p name="product-price" id="product-price">قیمت کالا : {{Product.price}} تومان</p>
                 <p name="product-category" id="product-category">دسته بندی کالا : {{Product.category}}</p>
               </div>
               <button title="Add" name="add-product-button" id="add-product-button">افزودن</button>

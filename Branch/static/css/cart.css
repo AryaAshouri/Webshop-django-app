@@ -16,6 +16,10 @@
   border-radius:10px;
   background-color:none;
 }
+::placeholder {
+  color:white;
+  opacity:0.5;
+}
 a {
   text-decoration:none;
   color:white;

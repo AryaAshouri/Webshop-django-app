@@ -21,7 +21,7 @@
               {% csrf_token %}
               {{ form.as_p }}
               <input type="text" name="product-name" id="product-title" value="{{Cart.name}}" readonly>
-              <p name="product-price" id="product-price">قیمت کالا : {{Cart.price}}</p>
+              <p name="product-price" id="product-price">قیمت کالا : {{Cart.price}} تومان</p>
               <p name="product-category" id="product-category">دسته بندی کالا : {{Cart.category}}</p>
             </div>
             <button title="Add" name="add-product-button" id="add-product-button">افزودن</button>

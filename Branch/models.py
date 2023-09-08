@@ -1,6 +1,7 @@
 from django.db import models
 from django.db import models
 from django.utils import timezone
+from django.core.validators import MaxValueValidator
 
 class Categorie(models.Model):
 	status =  (
@@ -22,8 +23,8 @@ class Product(models.Model):
 		("d", "Draft"),
 		("p", "Publish")
 	)
-	name = models.CharField(max_length = 20, null = True)
-	price = models.CharField(max_length = 90, null = True)
+	name = models.CharField(max_length = 20, null = True, unique=True)
+	price = models.PositiveIntegerField(validators=[MaxValueValidator(1000000000)], null = True)
 	category = models.CharField(max_length = 50, null = True)
 	likes = models.CharField(max_length = 1000, null = True)
 	image = models.ImageField(null=True, upload_to = "Images")
@@ -39,8 +40,8 @@ class Cart(models.Model):
 		("d", "Draft"),
 		("p", "Publish")
 	)
-	name = models.CharField(max_length = 20, null = True)
-	price = models.CharField(max_length = 90, null = True)
+	name = models.CharField(max_length = 20, null = True, unique=True)
+	price = models.PositiveIntegerField(validators=[MaxValueValidator(1000000000)], null = True)
 	category = models.CharField(max_length = 50, null = True)
 	likes = models.CharField(max_length = 1000, null = True)
 	image = models.ImageField(null=True, upload_to = "Images")

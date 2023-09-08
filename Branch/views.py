@@ -18,7 +18,6 @@ def home(request):
 		product.save()
 
 		product_price = product.price
-		dict_of_cart_products.update({product_name : product_price})
 		for name, price in dict_of_cart_products.items():
 			if (name == product_name and price == product_price):
 				Cart.objects.filter(name=name).delete()
