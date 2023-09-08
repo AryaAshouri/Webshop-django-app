@@ -203,6 +203,10 @@ Body {
   transition:0.5s;
   cursor:pointer;
 }
+#like-product-button:hover {
+  background:var(--main-darker-bg-color);
+  color:white;
+}
 #product-likes-section {
   width:280px;
   height:40px;
@@ -220,10 +224,6 @@ Body {
 }
 #fake-product-likes-section {
   display:none;
-}
-#like-product-button:hover {
-  background:var(--main-darker-bg-color);
-  color:white;
 }
 @media only screen and (max-width: 1200px) {
   #main-news-board {

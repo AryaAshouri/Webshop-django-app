@@ -60,6 +60,16 @@ def offer(request):
 	return render(request, "offer.html")
 
 def cart(request):
+	global dict_of_cart_products
+	if request.method == "POST" and "delete-product-button" in request.POST:
+		product_name = request.POST.get("product-name")
+		product = Product.objects.get(name=product_name)
+		Cart.objects.filter(name=product).delete()
+
+		for name in dict_of_cart_products.copy():
+			if (name == product_name):
+				del dict_of_cart_products[name]
+
 	context = {
 	"Carts": Cart.objects.filter(status="p").order_by("-publish"),
 	}

@@ -89,7 +89,7 @@ Body {
   margin:5px 0px;
   cursor:default;
 }
-#add-product-button {
+#pay-product-button {
   width:97px;
   height:40px;
   border-radius:0px 0px 0px 15px;
@@ -103,11 +103,11 @@ Body {
   transition:0.5s;
   cursor:pointer;
 }
-#add-product-button:hover {
+#pay-product-button:hover {
   background:var(--main-darker-bg-color);
   color:white;
 }
-#like-product-button {
+#delete-product-button {
   width:97px;
   height:40px;
   border-radius:0px 0px 15px 0px;
@@ -119,6 +119,10 @@ Body {
   margin-top:45px;
   transition:0.5s;
   cursor:pointer;
+}
+#delete-product-button:hover {
+  background:var(--main-darker-bg-color);
+  color:white;
 }
 #product-likes-section {
   width:280px;
@@ -137,10 +141,6 @@ Body {
 }
 #fake-product-likes-section {
   display:none;
-}
-#like-product-button:hover {
-  background:var(--main-darker-bg-color);
-  color:white;
 }
 @media only screen and (max-width: 1200px) {
   #main-news-board {
