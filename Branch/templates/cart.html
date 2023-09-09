@@ -3,6 +3,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="{% static 'css/cart.css' %}">
@@ -24,14 +25,26 @@
               <p name="product-price" id="product-price">قیمت کالا : {{Cart.price}}</p>
               <p name="product-category" id="product-category">دسته بندی کالا : {{Cart.category}}</p>
             </div>
-            <button title="Add" name="pay-product-button" id="pay-product-button">پرداخت</button>
-            <button title="Like" name="delete-product-button" id="delete-product-button">حذف</button>
+            <button title="Pay" name="pay-product-button" id="pay-product-button">پرداخت</button>
+            <button title="Delete" name="delete-product-button" id="delete-product-button">حذف</button>
             <img name="fake-product-image" id="fake-product-image" src="{{Cart.image.url}}"> 
             <div id="fake-product-likes-section">{{Cart.likes}}</div>
           </form>
           <div id="product-likes-section">تعداد پسند های کالا : {{Cart.likes}}</div>
         </div>
       {% endfor %}
+    </div>
+
+    <div data-aos="zoom-in" data-aos-delay="1000" id="pop-up-container">
+      <div id="pop-up">
+        <p id="pay-them-all-text">پرداخت همه کالا ها؟</p>
+        <form method="POST" enctype="multipart/form-data" id="form-container">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button onclick="wait_for_now()" title="Wait" id="wait-now-button" name="wait-now-button">فعلا صبر کن</button>
+          <button title="Pay" id="pay-all-button" name="pay-all-button">پرداخت همه</button>
+        </form>
+      </div>
     </div>
     <script src="{% static 'js/cart.js' %}"></script>
   </body>

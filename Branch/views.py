@@ -69,7 +69,7 @@ def cart(request):
 		for name in dict_of_cart_products.copy():
 			if (name == product_name):
 				del dict_of_cart_products[name]
-
+				
 	context = {
 	"Carts": Cart.objects.filter(status="p").order_by("-publish"),
 	}

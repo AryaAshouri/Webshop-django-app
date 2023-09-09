@@ -32,8 +32,8 @@ Body {
   user-select:none;
 }
 @keyframes change_current_bar {
-  0% { transform:scale(0) }
-  100% { transform:scale(1) }
+  0% { transform:scale(0); }
+  100% { transform:scale(1); }
 }
 .bar_loading_animation {
   animation: change_current_bar 0.3s forwards;
