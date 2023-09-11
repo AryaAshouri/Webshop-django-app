@@ -64,7 +64,7 @@ Body {
   cursor:pointer;
 }
 #search-bar {
-  width:60%;
+  width:49%;
   height:60px;
   margin:20px 5px;
   background:var(--main-bg-color);
@@ -78,7 +78,7 @@ Body {
   color:white;
 }
 #location-bar {
-  width:60%;
+  width:49%;
   height:60px;
   margin:20px 5px;
   background:var(--main-bg-color);
@@ -111,7 +111,7 @@ Body {
   width:92.5%;
   height:500px;
   border-radius:15px;
-  background:var(--main-bg-color); 
+  background:var(--main-bg-color);
   margin:10px auto;
 }
 #product-container {
@@ -142,7 +142,7 @@ Body {
 #product-title {
   font-family:Aviny;
   font-size:32px;
-  color:var(--main-bg-color); 
+  color:var(--main-bg-color);
   background:transparent;
   border:none;
   width:200px;
@@ -153,7 +153,7 @@ Body {
 #product-price {
   font-family:Aviny;
   font-size:18px;
-  color:var(--main-bg-color); 
+  color:var(--main-bg-color);
   background:transparent;
   border:none;
   width:200px;
@@ -164,7 +164,7 @@ Body {
 #product-category {
   font-family:Aviny;
   font-size:18px;
-  color:var(--main-bg-color); 
+  color:var(--main-bg-color);
   background:transparent;
   border:none;
   width:200px;
@@ -224,6 +224,10 @@ Body {
 }
 #fake-product-likes-section {
   display:none;
+}
+@font-face {
+  font-family:Aviny;
+  src:url('../font/Aviny.ttf');
 }
 @media only screen and (max-width: 1200px) {
   #main-news-board {

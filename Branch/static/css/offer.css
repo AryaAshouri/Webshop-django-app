@@ -97,3 +97,7 @@ Body {
   margin-top:0px;
   cursor:pointer;
 }
+@font-face {
+  font-family:Aviny;
+  src:url('../font/Aviny.ttf');
+}

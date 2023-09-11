@@ -16,11 +16,14 @@
         <a href="/"><div id="toolbar">
           <img title="Home" id="icon" src="{% static 'img/icon/toolbar/home.png' %}">
         </div></a>
+        <a href="/"><div id="toolbar">
+          <img title="Register" id="icon" src="{% static 'img/icon/toolbar/register.png' %}">
+        </div></a>
         <a href="/offer"><div id="toolbar">
           <img title="Offer" id="icon" src="{% static 'img/icon/toolbar/sell.png' %}">
         </div></a>
         <a href="/"><div id="toolbar">
-          <img title="Products" id="icon" src="{% static 'img/icon/toolbar/offers.png' %}">
+          <img title="Dashboard" id="icon" src="{% static 'img/icon/toolbar/offers.png' %}">
         </div></a>
         <input type="text" placeholder="جست و جو" id="search-bar">
         <input type="text" placeholder="در حال بارگیری" id="location-bar" readonly>
@@ -30,6 +33,9 @@
         <div onclick="load_location()" id="toolbar">
           <img title="Location" id="icon" onclick="load_location()" src="{% static 'img/icon/toolbar/location.png' %}">
         </div>
+        <a href="/products"><div id="toolbar">
+          <img title="Products" id="icon" src="{% static 'img/icon/toolbar/products.png' %}">
+        </div></a>
         <a href="/cart"><div id="toolbar">
           <img title="Cart" id="icon" src="{% static 'img/icon/toolbar/cart.png' %}">
           {% if Count > 0 %}
@@ -61,5 +67,5 @@
         {% endfor %}
       </div>
     </body>
-    <script src="{% static 'js/index.js' %}">AOS.init();</script>
+    <script src="{% static 'js/index.js' %}"></script>
 </html>

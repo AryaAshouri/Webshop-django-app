@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <link rel="stylesheet" href="{% static 'css/products.css' %}">
+        <link rel="icon" href="{% static 'img/icon/toolbar/webshop.png' %}">
+        <title>
+            Webshop | Products
+        </title>
+    </head>
+    <body>
+        <form method="POST" enctype="multipart/form-data" id="category-selection-form">
+            <div data-aos="fade-down" id="toolbar-icon-container">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="toolbar" id="Everything" name="change_category">
+                    <img onclick="change_category(0)" title="Everything" id="icon" src="{% static 'img/icon/categories/all.png' %}">
+                </button>
+                <button class="toolbar" id="Clothes" name="change_category">
+                    <img onclick="change_category(1)" title="Clothes" id="icon" src="{% static 'img/icon/categories/clothes.png' %}">
+                </button>
+                <button class="toolbar" id="Electrical" name="change_category">
+                    <img onclick="change_category(2)" title="Electrical" id="icon" src="{% static 'img/icon/categories/electrical.png' %}">
+                </button>
+                <button class="toolbar" id="Groceries" name="change_category">
+                    <img onclick="change_category(3)" title="Groceries" id="icon" src="{% static 'img/icon/categories/groceries.png' %}">
+                </button>
+                <button class="toolbar" id="Books" name="change_category">
+                    <img onclick="change_category(4)" title="Books" id="icon" src="{% static 'img/icon/categories/books.png' %}">
+                </button>
+                <button class="toolbar" id="Toy" name="change_category">
+                    <img onclick="change_category(5)" title="Toy" id="icon" src="{% static 'img/icon/categories/toy.png' %}">
+                </button>
+                <button class="toolbar" id="Furniture" name="change_category">
+                    <img onclick="change_category(6)" title="Furniture" id="icon" src="{% static 'img/icon/categories/furniture.png' %}">
+                </button>
+                <button class="toolbar" id="Stationery" name="change_category">
+                    <img onclick="change_category(7)" title="Stationery" id="icon" src="{% static 'img/icon/categories/stationery.png' %}">
+                </button>
+                <button class="toolbar" id="Flowers" name="change_category">
+                    <img onclick="change_category(8)" title="Flowers" id="icon" src="{% static 'img/icon/categories/flowers.png' %}">
+                </button>
+                <button class="toolbar" id="Kitchenware" name="change_category">
+                    <img onclick="change_category(9)" title="Kitchenware" id="icon" src="{% static 'img/icon/categories/kitchenware.png' %}">
+                </button>
+                <button class="toolbar" id="Sport_Equipments">
+                    <img onclick="change_category(10)" title="Sport equipments" id="icon" src="{% static 'img/icon/categories/sports.png' %}">
+                </button>
+                <button class="toolbar" id="Medicine" name="change_category">
+                    <img onclick="change_category(11)" title="Medicine" id="icon" src="{% static 'img/icon/categories/medicine.png' %}">
+                </button>
+                <button class="toolbar" id="Cosmetic" name="change_category">
+                    <img onclick="change_category(12)" title="Cosmetic" id="icon" src="{% static 'img/icon/categories/cosmetic.png' %}">
+                </button>
+                <button class="toolbar" id="None" name="change_category">
+                    <img onclick="change_category(13)" title="None" id="icon" src="{% static 'img/icon/categories/none.png' %}">
+                </button>
+            </div>
+        </form>
+        <script src="{% static 'js/products.js' %}"></script>
+    </body>
+</html>

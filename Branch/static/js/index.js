@@ -1,6 +1,6 @@
 first_search_time = false;
 counter = 0;
-changed_width = "60%"
+changed_width = "49%"
 function load_search(){
   document.getElementById("location-bar").placeholder = "در حال بارگیری";
   counter = 0;
@@ -85,4 +85,4 @@ function load_location(){
     document.getElementById("location-bar").classList.add("bar_loading_animation");
   }
 }
-AOS.init()
+AOS.init();

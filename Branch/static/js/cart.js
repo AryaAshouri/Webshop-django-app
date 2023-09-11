@@ -8,4 +8,4 @@ function wait_for_now(){
 $(document).on("submit", "#form-container", function(page){
     page.preventDefault();
 })
-AOS.init()
+AOS.init();
